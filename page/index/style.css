@@ -39,19 +39,55 @@
   footer {
     padding: 9rem 5rem;
   }
+  
+  .container{
+    padding-top: 257px;
+      display: flex; /* Aktifkan Flexbox */
+      justify-content: center; /* Posisikan secara horizontal */
+      align-items: center; /* Posisikan secara vertikal */
+       /* Tinggi container sesuai viewport */
+      text-align: center; /* Pusatkan teks dalam paragraf */
+  }
+  
+  .header{
+    background-color: #ffffff;
+  }
+  .tag-line p {
+    margin: 0; /* Hilangkan margin default pada paragraf */
+  }
   .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5rem;
   }
+  .tag-line{
+    font-size: 35px;
+  }
   .column {
     width: 100%;
   }
-  .section-desc {
-    text-align: center;
-    margin: 2rem 0 6rem 0;
+  .column img{
+    width: 100%; /* Isi penuh kotak */
+  height: 100%; /* Isi penuh kotak */
+  object-fit: cover;
   }
+  .testimoni{
+    font-size: 30px; 
+  }
+  
+  .column .desc{
+    font-size: 20px;
+  }
+  .section-desc {
+    font-size: 20px;
+    text-align: center;
+    margin: 5rem 0 20rem 0;
+  }
+  .desc-tag{
+    font-size: 17px;
+  }
+  
   h1 {
     font-size: var(--heading-font-size-1);
     color: #00a8fa;
@@ -87,6 +123,30 @@
     line-height: 1.8;
     font-weight: 400;
   }
+  .center-container {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* Pusatkan elemen dalam tinggi layar penuh */
+  }
+  .tombol {
+  
+    border: 2px solid #BD1212; /* Mengatur warna garis pinggir */
+    color: #BD1212; /* Mengatur warna font */
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+    align-items: center;
+    justify-items: center;
+    padding: 10px 20px; /* Menambahkan padding untuk tombol */
+    font-size: 16px; /* Mengatur ukuran font */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color 0.3s, color 0.3s; /* Menambahkan efek transisi */
+  }
+  
+  .tombol:hover {
+    background-color: #BD1212; /* Mengubah latar belakang saat hover */
+    color: white; /* Mengubah warna font saat hover */
+  }
   .btn {
     background-color: transparent;
     padding: 1rem 2rem;
@@ -105,6 +165,7 @@
   
   /*------ Header ------*/
   header {
+    box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.07);
     position: fixed;
     width: 100%;
     padding: 2rem 4rem;
@@ -117,10 +178,10 @@
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
   }
   nav a {
-    font-size: var(--heading-font-size-4);
+    font-size: 22px;
     text-decoration: none;
   }
   nav a#logo {
@@ -128,7 +189,7 @@
     font-weight: 700;
   }
   nav ul a {
-    color: #303db4;
+    color: #000000;
   }
   
   /*-- SideMenu --*/
@@ -140,8 +201,8 @@
   }
   /*-- Sticky Header --*/
   .sticky {
-    background-color: var(--white-shade-1);
-    box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.07);
+    background-color:white;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.126);
   }
   .sticky nav ul a,
   .sticky nav a#logo,
@@ -150,7 +211,7 @@
   }
   /*-- Link Hover Effect --*/
   nav ul a:hover {
-    color: #232323;
+    color: #BD1212;
   }
   .sticky nav ul a:hover {
     color: #c70032;
@@ -158,7 +219,8 @@
   /*------ Section: Hero ------*/
   section.hero {
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    padding-top:150px;
+    grid-template-columns: 2.5fr 4fr;
     align-items: center;
   }
   #header-shape {
@@ -168,11 +230,16 @@
     z-index: -1;
   }
   .hero-content p {
+   
     text-align: justify;
+  }
+  .card{
+     width: 653px;
+    background-color:#B90303F0;
   }
   .hero-img img {
     display: block;
-    width: 100%;
+    width: 535px;
   }
   .btn-container {
     display: flex;
@@ -248,15 +315,12 @@
   }
   /*------ Section: Testimonials ------*/
   .testimonial {
-    background-image: linear-gradient(
-        45deg,
-        rgba(var(--grad-color-1), 0.8),
-        rgba(var(--grad-color-2), 0.8)
-      ),
-      url(testimonial-bg.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+  }
+  .testimonial-image p{
+    font-size: 20px;
   }
   .testimonial h2,
   .testimonial .section-desc {
@@ -267,29 +331,26 @@
   }
   .testimonial .column {
     background-color: var(--white-shade-1);
-    padding: 4rem 3rem;
-    text-align: center;
+    padding: 1rem 2rem;
+    text-align: left;
     border-radius: var(--border-radius-1);
     display: flex;
     flex-direction: column;
   }
   .testimonial-image {
-    height: 14rem;
-    width: 14rem;
+    height: 100%;
+    width: 100%;
     margin: auto;
     padding: 0.9rem;
-    background: linear-gradient(
-      var(--white-shade-1) 50%,
-      var(--base-shade-1) 50%
-    );
+    
     border-radius: 50%;
   }
   .testimonial-image img {
     width: 100%;
-    border-radius: 50%;
+   
   }
   .testimonial .column p {
-    margin: 4rem 0;
+    
     flex-grow: 1;
   }
   /*------ Section: Download App ------*/
@@ -396,58 +457,4 @@
     border-radius: var(--border-radius-2);
     box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
   }
-   /* Gaya CSS */
-   body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Modal Style */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    width: 40%;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #000;
-    text-decoration: none;
-}
+  
